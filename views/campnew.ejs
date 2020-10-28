@@ -1,0 +1,50 @@
+<%-include('partials/header')%>
+<
+<div class="container">
+
+        <header class="jumbotron">
+            <h1 style="text-align: center;"><i class="fa fa-plus"> Add New Camping Venture</i></h1>
+        </header> 
+        <div class="card w-50 reg card1">
+            <div class="card-body">
+                    <form action="/campground" method="POST">
+                        <div class="form-row">
+                            <div class="form-group col-md-9">
+                                <label for="exampleInputEmail1"><b>Campground Name</b></label>
+                                <input class="form-control" type="text" name="campname" placeholder=" Enter camp name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-9">
+                                <label for="exampleInputEmail1"><b>Campground image</b></label>
+                                <input class="form-control" type="text" name="campimage" placeholder=" Place camp image  url">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-9">
+                                <label for="exampleInputEmail1"><b>Campground Price</b></label>
+                                <input class="form-control" type="number" name="campPrice" placeholder="Campground Price" min="1" step="1">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-9">
+                                <label for="exampleInputEmail1"><b>Campground Description</b></label>
+                                <textarea class="form-control" type="text" name="description" placeholder=" Describe your Camplace"></textarea>
+                                <small id="emailHelp" class="form-text text-muted">Share your Camping Experience With World</small>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button class="btn btn-info btn-sm">Submit</button>
+                        </div>
+                        <a href="/campground" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Go Back</a>
+                    </form>
+            </div>
+            
+    </div>
+        
+        
+</div>
+
+
+<%-include('partials/footer')%>

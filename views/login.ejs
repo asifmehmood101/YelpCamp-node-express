@@ -1,0 +1,28 @@
+<%-include('partials/header')%>
+<div class="card w-50 reg card1">
+    <h1 class="card-title card-header card-header1">Login</h1>
+    <div class="card-body">
+        <form action="/login" method="POST">
+            <div class="form-row">
+                <div class="form-group col-md-9">
+                    <label for="exampleInputEmail1"><b>Username</b></label>
+                    <input class="form-control" id="exampleInputEmail1" type="text" name="username" placeholder="username" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group col-md-9">
+                    <label for="exampleInputEmail1"><b>Password</b></label>
+                    <input class="form-control" id="exampleInputEmail1" type="password" name="password" placeholder="password" required>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your detail with anyone else.</small>
+                </div>
+            </div>
+            
+            <button class="btn btn1">Submit</button>
+        
+        </form>
+    </div>
+
+</div>
+
+<%-include('partials/footer')%>

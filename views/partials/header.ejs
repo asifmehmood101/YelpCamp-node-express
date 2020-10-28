@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <title>YelpCamp</title>
+</head>
+<body>
+    <!-- nav bar  -->
+<div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="/"><b><i class="fa fa-free-code-camp">  YelpCamp</i></b></a>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <ul class="navbar-nav">
+              <% if(!Currentuser){ %>
+
+                <li class="nav-item active btn btn-sm btn-outline-info">
+                  <a class="nav-link" href="/register"><i class="fa fa-user-plus"> Signup</i></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link btn btn-sm" href="/login"><i class="fa fa-user"> Login</i> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active btn btn-sm" href="/campground/new"><i class="fa fa-plus"> Add New Campground</i></a>
+            </li>
+              <%}else{%>
+                <li class="nav-item">
+                  <a class="nav-link active btn btn-sm btn-outline-info " href="#"><i class="fa fa-user"></i>  Login As <%=Currentuser.username%></a>
+              </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/logout">Logout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active btn btn-sm" href="/campground/new"><i class="fa fa-plus"></i> Add New Campground</a>
+            </li>
+              <%}%>
+            </ul>
+          </form>
+        </div>
+      </nav>
+      <br>
+      <br>
+      <div class="container">
+        <%if(note && note.length>0){%>
+        <div class="alert alert-danger" role="alert">
+          <%=note%>-Not Register,Click On<a href="/register" class="alert-link"> Register Now</a>
+        </div>
+        <%}%>
+        <%if(error && error.length>0){%>
+        <div class="alert alert-danger" role="alert">
+          <%=error%>
+        </div>
+      <%}%>
+      <%if(success && success.length>0){%>
+        <div class="alert alert-success" role="alert">
+          <%=success%>
+        </div>
+      <%}%>
+      </div>
+</div>
+<br>
+  
